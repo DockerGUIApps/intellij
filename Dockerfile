@@ -12,7 +12,7 @@ ARG intellij_source=https://download.jetbrains.com/idea/ideaIC-2018.3.1.tar.gz
 
 WORKDIR /opt/intellij
 
-RUN curl -fsSL $intellij_source -o /opt/intellij/installer.tgz \
+RUN curl -fsSL $intellij_source -o /opt/intellij/installer.tgz && \
     echo 'Installing IntelliJ IDEA' && \
     tar -xf /opt/intellij/installer.tgz --strip-components=1 -C /opt/intellij && \
     rm /opt/intellij/installer.tgz
